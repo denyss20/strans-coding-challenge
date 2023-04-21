@@ -2,7 +2,6 @@ import { ErrorService } from '../../services/error.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, delay, throwError, retry, Observable } from 'rxjs';
-import { IBrewery } from '../../brewery.interface';
 
 
 export interface Brewery {
@@ -38,7 +37,7 @@ export class BreweryPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loading = true
-    this.http.get<Brewery[]>('https://api.openbrewerydb.org/v1/breweries?by_state=new_york&per_page=15')
+    this.http.get<Brewery[]>('https://api.openbrewerydb.org/v1/breweries?by_state=new_york&per_page=20')
     .pipe (
       delay(400),
       retry(2),

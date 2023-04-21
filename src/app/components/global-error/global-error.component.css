@@ -6,6 +6,7 @@
   background-color: red;
   color: white;
   position: relative;
+  z-index: 1000;
 }
 
 .button-err {
