@@ -19,7 +19,7 @@ describe('AppComponent', () => {
   it(`should have as title 'strans-coding-challenge'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('strans-coding-challenge');
+    expect(app).toEqual('strans-coding-challenge');
   });
 
   it('should render title', () => {

@@ -1,0 +1,22 @@
+.navigate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  padding-left: 15px;
+  padding-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: rgb(153, 153, 153);
+}
+
+.h1-brew{
+  font-weight: bold;
+}
+
+.h1-brew {
+  font-size: 1.5rem;
+}
