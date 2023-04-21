@@ -7,4 +7,4 @@ export interface IBrewery {
   state: string;
   postal_code: string;
   website_url: string;
-  }
+}

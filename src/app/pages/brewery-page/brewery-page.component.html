@@ -12,25 +12,27 @@
       class="search"
       placeholder="Filter breweries..."
       [(ngModel)]="term"
->
 
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let brewery of breweries | filterBreweries: term"
-    (click)="onSelect(brewery)"
-    [class.active]="brewery === selectedBrewery"
   >
-    {{ brewery.name }}
-  </li>
-</ul>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let brewery of breweries | filterBreweries: term"
+      (click)="onSelect(brewery)"
+      [class.active]="brewery === selectedBrewery"
+    >
+      {{ brewery.name }}
+    </li>
+  </ul>
 
   </div>
+
   <div class="col-8" *ngIf="selectedBrewery">
     <h2 class="h2-name">{{ selectedBrewery.name }}</h2>
-    <div class="brewery-info">
-      <p>street: {{ selectedBrewery.street }}</p>
-      <p>city: {{ selectedBrewery.city }}, state: {{ selectedBrewery.state }}, postal code: {{ selectedBrewery.postal_code }}</p>
-      <p><a [href]="selectedBrewery.website_url" target="_blank">{{ selectedBrewery.website_url }}</a></p>
-    </div>
+      <div class="brewery-info">
+        <p>street: {{ selectedBrewery.street }}</p>
+        <p>city: {{ selectedBrewery.city }}, state: {{ selectedBrewery.state }}, postal code: {{ selectedBrewery.postal_code }}</p>
+        <p><a [href]="selectedBrewery.website_url" target="_blank">{{ selectedBrewery.website_url }}</a></p>
+      </div>
     <button class="btn-secondary" (click)="selectedBrewery = undefined">Back</button>
   </div>
 </div>

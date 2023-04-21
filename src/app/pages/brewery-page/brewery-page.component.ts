@@ -1,7 +1,7 @@
-import { ErrorService } from '../../services/error.service';
-import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, delay, throwError, retry, Observable } from 'rxjs';
+import { ErrorService } from '../../services/error.service'
+import { Component, OnInit } from '@angular/core'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http'
+import { catchError, delay, throwError, retry, Observable } from 'rxjs'
 
 
 export interface Brewery {
@@ -22,10 +22,10 @@ export interface Brewery {
 })
 
 export class BreweryPageComponent implements OnInit {
-  title = 'Breweries NYC';
-  breweries: Brewery[] = [];
-  selectedBrewery?: Brewery;
-  loading = false;
+  title = 'Breweries NYC'
+  breweries: Brewery[] = []
+  selectedBrewery?: Brewery
+  loading = false
   term = ''
 
   constructor(
@@ -39,7 +39,7 @@ export class BreweryPageComponent implements OnInit {
     this.loading = true
     this.http.get<Brewery[]>('https://api.openbrewerydb.org/v1/breweries?by_state=new_york&per_page=20')
     .pipe (
-      delay(400),
+      delay(300),
       retry(2),
       catchError(this.errorHandler.bind(this))
           )
@@ -48,10 +48,7 @@ export class BreweryPageComponent implements OnInit {
     this.breweries = data
     this.loading = false
 
-      }
-
-      );
-
+      })
 }
 
 private errorHandler(error: HttpErrorResponse) {
@@ -60,7 +57,7 @@ private errorHandler(error: HttpErrorResponse) {
 }
 
   onSelect(brewery: Brewery): void {
-  this.selectedBrewery = brewery;
+  this.selectedBrewery = brewery
 
 }
 }
